@@ -49,3 +49,35 @@ func CodeFile(format, file string) (string, error) {
 
 	return md.String(), nil
 }
+
+func SubCategory(name string) string {
+	switch name {
+	case "azuredevops_environment",
+		"azuredevops_environment_kubernetes",
+		"azuredevops_environment_permissions":
+		return "Pipelines"
+	case "azuredevops_process",
+		"azuredevops_project":
+		return "Projects"
+	case "azuredevops_serviceendpoint_azurerm",
+		"azuredevops_serviceendpoint_bitbucket",
+		"azuredevops_serviceendpoint_github",
+		"azuredevops_serviceendpoint_kubernetes",
+		"azuredevops_serviceendpoint_share",
+		"azuredevops_serviceendpoint_vsappcenter":
+		return "Service Endpoints"
+	case "azuredevops_group",
+		"azuredevops_group_membership",
+		"azuredevops_groups",
+		"azuredevops_team",
+		"azuredevops_teams",
+		"azuredevops_user",
+		"azuredevops_users":
+		return "Users & Groups"
+	case "azuredevops_area",
+		"azuredevops_iteration":
+		return "Work Items"
+	default:
+		return ""
+	}
+}

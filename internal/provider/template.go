@@ -42,6 +42,7 @@ func newTemplate(name, text string) (*template.Template, error) {
 		"plainmarkdown": mdplain.PlainMarkdown,
 		"prefixlines":   tmplfuncs.PrefixLines,
 		"split":         strings.Split,
+		"subcategory":   tmplfuncs.SubCategory,
 		"tffile":        terraformCodeFile,
 		"title":         titleCaser.String,
 		"trimspace":     strings.TrimSpace,
