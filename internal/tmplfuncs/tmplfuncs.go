@@ -52,17 +52,31 @@ func CodeFile(format, file string) (string, error) {
 
 func SubCategory(name string) string {
 	switch name {
-	case "azuredevops_environment",
+	case "azuredevops_git_permissions":
+		return "Git"
+	case "azuredevops_agent_pool",
+		"azuredevops_agent_queue",
+		"azuredevops_environment",
 		"azuredevops_environment_kubernetes",
-		"azuredevops_environment_permissions":
+		"azuredevops_environment_permissions",
+		"azuredevops_pipeline_settings",
+		"azuredevops_pipeline_permissions":
 		return "Pipelines"
 	case "azuredevops_process",
-		"azuredevops_project":
+		"azuredevops_project",
+		"azuredevops_project_features",
+		"azuredevops_project_permissions":
 		return "Projects"
 	case "azuredevops_serviceendpoint_azurerm",
 		"azuredevops_serviceendpoint_bitbucket",
+		"azuredevops_serviceendpoint_dockerregistry",
+		"azuredevops_serviceendpoint_generic",
 		"azuredevops_serviceendpoint_github",
+		"azuredevops_serviceendpoint_jfrog",
 		"azuredevops_serviceendpoint_kubernetes",
+		"azuredevops_serviceendpoint_npm",
+		"azuredevops_serviceendpoint_nuget",
+		"azuredevops_serviceendpoint_permissions",
 		"azuredevops_serviceendpoint_share",
 		"azuredevops_serviceendpoint_vsappcenter":
 		return "Service Endpoints"
@@ -75,7 +89,9 @@ func SubCategory(name string) string {
 		"azuredevops_users":
 		return "Users & Groups"
 	case "azuredevops_area",
-		"azuredevops_iteration":
+		"azuredevops_area_permissions",
+		"azuredevops_iteration",
+		"azuredevops_iteration_permissions":
 		return "Work Items"
 	default:
 		return ""
